@@ -1,1 +1,10 @@
-# Kathleen_Mathieu_Web2final_582-211
+# Choeur qui bat
+## Projet scolaire
+
+Web 2 582-211 https://choeurquibat.ca/
+Collège Montmorency
+
+## Équipe
+
+- Kathleen Virgo Jean Jacques
+- Mathieu Fréchette
