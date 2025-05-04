@@ -12,7 +12,7 @@ body {
     --color-blue-primary: #2E4EB7;
     --color-yellow-light: #FFEB89;
     --color-black: #000000;
-    --color-blue-dark: #19307F;
+    --color-blue-dark: #010B31;
     --color-yellow-medium: #F4CB5A;
     --font-primary: 'DM Serif Text', serif;
     --font-secondary: 'Schibsted Grotesk', sans-serif;
@@ -36,7 +36,7 @@ h2 {
 h3 {
     font-family: var(--font-primary);
     font-size: 1.75rem;
-    color: var(--color-blue-dark);
+    color: var(--color-white);
     margin-bottom: 0.5em;
 }
 
@@ -47,3 +47,101 @@ a {
 }
 
   /*------ Section Hero ------*/
+
+/*----- Styles pour le pied de page -----*/
+footer {
+    background-color: #010B31;
+    color: #fff;
+    padding: 2em 1em;
+    font-family: var(--font-secondary);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-logo img {
+    width: 80px;
+    margin-bottom: 0.5em;
+}
+
+.footer-logo h2 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    color: var(--color-yellow-medium);
+}
+
+.footer-contacts h3, .footer-subscribe h3 {
+    font-family: var(--font-primary);
+    font-size: 1.25rem;
+    margin-bottom: 0.5em;
+}
+
+.footer-contacts p {
+    margin: 0.5em 0;
+}
+
+.footer-contacts a {
+    color: var(--color-yellow-light);
+    text-decoration: none;
+}
+
+.footer-social a {
+    margin: 0 0.5em;
+    display: inline-block;
+}
+
+.footer-social img {
+    width: 24px;
+    height: 24px;
+    filter: invert(100%);
+    transition: transform 0.3s ease;
+}
+
+.footer-social a:hover img {
+    transform: scale(1.1);
+}
+
+.footer-subscribe form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.footer-subscribe input {
+    padding: 0.5em;
+    border: 1px solid var(--color-yellow-medium);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.footer-subscribe button {
+    background-color: var(--color-blue-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.footer-subscribe button:hover {
+    background-color: var(--color-blue-dark);
+}
+
+/* Styles responsive */
+@media (min-width: 768px) {
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .footer-contacts, .footer-subscribe {
+        align-items: flex-start;
+    }
+}
