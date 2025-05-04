@@ -1,0 +1,12 @@
+body {
+    background-color: var(--color-white);
+  }
+
+:root {
+    --color-white: #FFFFFF;
+    --color-blue-primary: #2E4EB7;
+    --color-yellow-light: #FFEB89;
+    --color-black: #000000;
+    --color-blue-dark: #19307F;
+    --color-yellow-medium: #F4CB5A;
+  }
