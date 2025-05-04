@@ -3,7 +3,8 @@
 
 body {
     background-color: var(--color-white);
-  }
+    font-family: var(--font-secondary);
+}
 
 :root {
     --color-white: #FFFFFF;
@@ -15,6 +16,10 @@ body {
     --font-primary: 'DM Serif Text', serif;
     --font-secondary: 'Schibsted Grotesk', sans-serif;
   }
+
+h1, h2, h3 {
+    font-family: var(--font-primary);
+}
 
   /*----- Styles Généraux -----*/
   /*------ Section Hero ------*/
