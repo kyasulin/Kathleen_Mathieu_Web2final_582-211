@@ -5,7 +5,10 @@
 
 body {
     background-color: var(--color-white);
-  }
+    font-family: var(--font-secondary); /* Police secondaire par défaut */
+    color: var(--color-black); /* Couleur du texte par défaut */
+    line-height: 1.6; /* Amélioration de la lisibilité */
+}
 
 :root {
     --color-white: #FFFFFF;
@@ -18,6 +21,7 @@ body {
     --font-secondary: 'Schibsted Grotesk', sans-serif;
   }
 
+<<<<<<< Updated upstream
   h1 {
     font-family: var(--font-primary);
     font-size: 2.5rem;
@@ -47,3 +51,30 @@ a {
 }
 
   /*------ Section Hero ------*/
+=======
+  /*----- Styles Généraux -----*/
+  /*------ Section Hero ------*/
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary); /* Police principale pour les titres */
+    color: var(--color-blue-primary); /* Couleur des titres */
+    margin: 0.5em 0; /* Espacement des titres */
+}
+
+p {
+    font-family: var(--font-secondary); /* Police secondaire pour les paragraphes */
+    margin: 0.5em 0; /* Espacement des paragraphes */
+}
+
+/* Ajout de styles pour les liens */
+a {
+    font-family: var(--font-secondary);
+    color: var(--color-blue-dark);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-yellow-medium);
+    text-decoration: underline;
+}
+>>>>>>> Stashed changes
