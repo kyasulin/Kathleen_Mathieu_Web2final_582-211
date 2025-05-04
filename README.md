@@ -8,3 +8,4 @@ Collège Montmorency
 
 - Kathleen Virgo Jean Jacques
 - Mathieu Fréchette
+- Miaou
