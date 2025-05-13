@@ -22,6 +22,12 @@ body {
     line-height: 1.6;
 }
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-primary);
     margin: 0;
@@ -32,7 +38,7 @@ p {
 }
 
 a {
-    color: var(--color-blue-primary);
+    color: var(--color-black);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -42,3 +48,137 @@ a:hover {
 }
 
 /*------ Section Hero ------*/
+/*----- Header -----*/
+#hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 100px; /* Pour éviter le chevauchement avec le header */
+    text-align: center;
+    margin: 0; /* Supprime les marges de la section */
+    padding: 0; /* Supprime les espacements de la section */
+    width: 100%; /* Assure que la section occupe toute la largeur */
+}
+
+#hero h1 {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    color: var(--color-yellow-medium);
+    margin-bottom: 1em;
+}
+
+.hero-image {
+    width: 100%; /* L'image occupe toute la largeur */
+    height: 509px; /* Hauteur fixe */
+    object-fit: cover; /* Conserve les proportions de l'image tout en remplissant l'espace */
+    object-position: center; /* Centre l'image */
+    display: block; /* S'assure que l'image est un élément de bloc */
+    margin: 0; /* Supprime toute marge autour de l'image */
+    padding: 0; /* Supprime tout espacement autour de l'image */
+    transform: translateY(-40px); /* Déplace l'image 20px vers le haut */
+}
+
+/* Augmenter la taille du logo */
+header .logo {
+    width: 160px; 
+    height: auto; 
+}
+
+/* Réduire la taille de l'image utilisateur et ajuster la marge */
+header .user-icon {
+    margin-right: 5px; /* Réduit la marge à droite */
+    height: 100px;
+    width: 100px;
+}
+
+/* Section Intro */
+#intro {
+    display: flex;
+    flex-direction: column; /* Empile les éléments verticalement */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--color-white);
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: column; /* Empile l'image et le texte */
+    gap: 20px; /* Espace entre l'image et le texte */
+    width: 100%;
+}
+
+.intro-image {
+    width: 100%; /* L'image occupe toute la largeur */
+    height: auto;
+    border-radius: 10px; /* Coins arrondis */
+    object-fit: cover;
+    box-shadow: 10px 10px 0px var(--color-yellow-medium); /* Ombre jaune pâle solide */
+}
+
+.intro-text {
+    width: 100%; /* Le texte occupe toute la largeur */
+    text-align: center; /* Centre le texte pour un meilleur rendu mobile */
+}
+
+.intro-text h1 {
+    font-size: 2rem; /* Taille adaptée pour mobile */
+}
+
+.intro-text p {
+    font-size: 1rem; /* Taille adaptée pour mobile */
+}
+
+/* Bouton "Apprendre plus" */
+.btn-learn-more {
+    margin: 1em auto 0; /* Centre le bouton sur mobile */
+}
+
+/* Version desktop (media query) */
+@media (min-width: 768px) {
+    #intro {
+        display: flex;
+        flex-direction: row; /* Aligne les éléments horizontalement */
+        align-items: center; /* Centre verticalement */
+        justify-content: center; /* Centre horizontalement */
+        padding: 50px 20px;
+        height: 100vh; /* Prend toute la hauteur de la fenêtre */
+        box-sizing: border-box; /* Inclut le padding dans la hauteur totale */
+    }
+
+    .intro-content {
+        display: flex;
+        flex-direction: row; 
+        gap: 70px; 
+        max-width: 1200px; 
+        width: 100%;
+    }
+
+    .intro-image {
+        width: auto; 
+        height: 100%; 
+        object-fit: cover; 
+        border-radius: 0; 
+        box-shadow: -10px 10px 0px var(--color-yellow-medium); 
+    }
+
+    .intro-text {
+        width: 50%; 
+        margin: 0 auto; 
+        text-align: left; 
+    }
+
+    .intro-text h1 {
+        font-size: 2.5rem; /* Taille adaptée pour desktop */
+    }
+
+    .intro-text p {
+        font-size: 1.2rem; /* Taille adaptée pour desktop */
+    }
+
+    .btn-learn-more {
+        margin: 1em 0 0; /* Positionne le bouton en haut à gauche */
+    }
+}
+

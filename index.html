@@ -9,26 +9,53 @@
     <title>Le choeur qui bat</title>
 </head>
 <body>
-    <header class="header">
-        <div class="logo">
-        <img src="logo.png" alt="Logo Choeur Qui Bat" />
-        <h1>Choeur<br><span>Qui Bat</span></h1>
-        </div>
-        <nav class="nav">
-        <a href="#">Concerts</a>
-        <a href="#">À Propos</a>
-        <a href="#">Notre Équipe</a>
-        <a href="#">Contactez-Nous</a>
-        </nav>
-        <div class="user-icon">
-        <img src="user-icon.png" alt="Utilisateur" />
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <img src="./images/logo.png" alt="Logo Choeur Qui Bat" class="header-logo">
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="page02_concerts.html">Concerts</a></li>
+                    <li><a href="page03_equipe.html">Notre Équipe</a></li>
+                    <li><a href="page04_contact.html">Contactez-nous</a></li>
+                </ul>
+                <img src="images/bouton_utilisateur.png" alt="Utilisateur" class="user-icon">
+            </nav>
         </div>
     </header>
+
+    <!-- Section Hero -->
+    <section id="hero">
+        <img src="images/image_accueil_corps.png" alt="Image d'accueil" class="hero-image">
+        <h1>Accueil</h1>
+    </section>
+
+    <!-- Section Intro -->
+    <section id="intro">
+        <div class="intro-content">
+            <img src="./images/image_accueil_travail_perso.png" alt="Group photo" class="intro-image">
+            <div class="intro-text">
+                <h1>Travail personnel</h1>
+                <p>
+                    En plus des répétitions hebdomadaires, un engagement et un effort de la part de chaque choriste sont requis pour :
+                </p>
+                <ul>
+                    <li>Mémorisation par cœur des pièces musicales</li>
+                    <li>Interprétation et apprentissage des gestuelles (consignes émises par le comité de mise en scène)</li>
+                    <li>Assistance sous base volontaire au comité de mise en scène (chorégraphies, décors, costumes, accessoires)</li>
+                    <li>Participation à divers moyens de financement du chœur (vente de billets et activité de collectes de fonds effectuées en cours d’année)</li>
+                </ul>
+                <a href="#" class="btn-learn-more">Apprendre plus</a>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-container">
             <!-- Section Logo -->
             <div class="footer-logo">
-                <img src="images/logo-gatineau.png" alt="Logo Gatineau">
+                <img src="./images/logo_gatineau.png" alt="Logo Gatineau">
             </div>
     
             <!-- Section Contacts -->

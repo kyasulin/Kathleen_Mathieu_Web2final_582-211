@@ -98,8 +98,6 @@ a {
     background: none;
     border: none;
     z-index: 10;
-    /* Supprimer le curseur */
-    cursor: default;
 }
 
 .hamburger span {
@@ -109,6 +107,90 @@ a {
     background-color: var(--color-white);
     border-radius: 2px;
 }
+
+/*----- Header -----*/
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background: linear-gradient(to bottom, var(--color-blue-dark) 30%, rgba(1, 11, 49, 0.5) 70%, transparent 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 100px;
+}
+
+.header-logo {
+    width: 120px; 
+}
+
+.header-logo img {
+    width: 50px; /* Taille du logo */
+    transition: filter 0.3s ease; /* Ajoute une transition fluide */
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-white);
+}
+
+/*----- Header du menu de navigation Navigation -----*/
+.header-nav {
+    display: none; /* Cache la navigation par défaut */
+    justify-content: space-evenly; /* Espace égal entre les éléments */
+    align-items: center; /* Aligne les éléments verticalement */
+    flex-grow: 1; /* Permet à la navigation de prendre tout l'espace disponible */
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+}
+
+.header-nav ul {
+    display: flex; /* Affiche les éléments de la liste en ligne */
+    gap: 2em; /* Ajoute un espacement entre les liens */
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Supprime les puces de la liste */
+}
+
+.header-nav a {
+    font-family: var(--font-primary); /* Applique la police DM Serif Text */
+    color: var(--color-white); /* Couleur du texte */
+    text-decoration: none; /* Supprime le soulignement */
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+    color: var(--color-yellow-medium); /* Couleur au survol */
+}
+
+/*----- Media Queries pour les écrans plus larges -----*/
+@media (min-width: 768px) {
+    .header-nav {
+        display: flex; /* Affiche la navigation en mode desktop */
+    }
+
+    .menu-toggle {
+        display: none; /* Cache le menu hamburger sur les écrans plus larges */
+    }
+}
+
+body {
+    margin: 0;
+    padding-top: 80px; 
+    font-family: var(--font-secondary);
+    color: var(--color-black);
+    line-height: 1.6;
+}
+
 /*----- Styles pour le pied de page -----*/
 footer {
     background-color: #010B31;
@@ -126,7 +208,7 @@ footer {
 }
 
 .footer-logo img {
-    width: 80px;
+    width: 150px;
     margin-bottom: 0.5em;
 }
 
@@ -191,10 +273,10 @@ footer {
 }
 
 .footer-subscribe button:hover {
-    background-color: var(--color-blue-dark);
+    background-color: var(--color-yellow-medium);
 }
 
-/* Styles responsive */
+/* Styles responsive pour desktop */
 @media (min-width: 768px) {
   
     .footer-container {
