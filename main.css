@@ -276,7 +276,7 @@ footer {
     background-color: var(--color-yellow-medium);
 }
 
-/* Styles responsive pour desktop */
+/* Styles responsive pour la version desktop */
 @media (min-width: 768px) {
   
     .footer-container {

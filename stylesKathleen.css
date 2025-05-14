@@ -47,6 +47,8 @@ a:hover {
     color: var(--color-yellow-medium);
 }
 
+/* STYLES POUR ACCUEIL */
+
 /*------ Section Hero ------*/
 /*----- Header -----*/
 #hero {
@@ -64,7 +66,9 @@ a:hover {
 #hero h1 {
     font-family: var(--font-primary);
     font-size: 3rem;
-    color: var(--color-yellow-medium);
+    color: var(--color-black); /* Change la couleur du texte en noir */
+    position: relative; /* Nécessaire pour positionner le rectangle */
+    z-index: 2; /* Place le texte au-dessus du rectangle */
     margin-bottom: 1em;
 }
 
@@ -95,9 +99,9 @@ header .user-icon {
 /* Section Intro */
 #intro {
     display: flex;
-    flex-direction: column; /* Empile les éléments verticalement */
+    flex-direction: column; /* Empile les sections verticalement */
     align-items: center;
-    justify-content: center;
+    gap: 50px; /* Espace entre les sections */
     padding: 20px;
     background-color: var(--color-white);
 }
@@ -111,15 +115,14 @@ header .user-icon {
 
 .intro-image {
     width: 100%; /* L'image occupe toute la largeur */
-    height: auto;
-    border-radius: 10px; /* Coins arrondis */
+    height: auto; /* Coins arrondis */
     object-fit: cover;
-    box-shadow: 10px 10px 0px var(--color-yellow-medium); /* Ombre jaune pâle solide */
+    box-shadow: -10px 10px 0px var(--color-yellow-medium); /* Ombre jaune pâle solide */
 }
 
 .intro-text {
     width: 100%; /* Le texte occupe toute la largeur */
-    text-align: center; /* Centre le texte pour un meilleur rendu mobile */
+    text-align: left; /* Centre le texte pour un meilleur rendu mobile */
 }
 
 .intro-text h1 {
@@ -130,6 +133,15 @@ header .user-icon {
     font-size: 1rem; /* Taille adaptée pour mobile */
 }
 
+/* Réduction de la taille des images */
+.intro-content .intro-image,
+.intro-extra .intro-image {
+    width: 40%; /* Réduit la largeur de l'image à 40% du conteneur */
+    height: auto; /* Maintient les proportions de l'image */
+    object-fit: cover; /* Conserve les proportions tout en remplissant l'espace */
+    box-shadow: -10px 10px 0px var(--color-yellow-medium); /* Ombre jaune uniquement sur l'image */
+}
+
 /* Bouton "Apprendre plus" */
 .btn-learn-more {
     margin: 1em auto 0; /* Centre le bouton sur mobile */
@@ -138,47 +150,101 @@ header .user-icon {
 /* Version desktop (media query) */
 @media (min-width: 768px) {
     #intro {
+        gap: 70px; /* Espace entre les sections */
+    }
+
+    .intro-content,
+    .intro-extra {
         display: flex;
-        flex-direction: row; /* Aligne les éléments horizontalement */
-        align-items: center; /* Centre verticalement */
-        justify-content: center; /* Centre horizontalement */
-        padding: 50px 20px;
-        height: 100vh; /* Prend toute la hauteur de la fenêtre */
-        box-sizing: border-box; /* Inclut le padding dans la hauteur totale */
+        flex-direction: row; /* Aligne l'image et le texte horizontalement */
+        justify-content: center;
+        align-items: stretch; /* Étire les éléments pour qu'ils aient la même hauteur */
+        gap: 50px; /* Espace entre l'image et le texte */
+        max-width: 1200px;
+        margin: 0 auto; /* Centre la section */
     }
 
-    .intro-content {
+    .intro-content .intro-image,
+    .intro-extra .intro-image {
+        width: 35%; /* Réduit davantage la largeur de l'image sur desktop */
+        height: auto; /* Maintient les proportions */
+    }
+
+    .intro-content .intro-text,
+    .intro-extra .intro-textbox {
+        width: 50%; /* Le texte occupe 50% de la largeur */
         display: flex;
-        flex-direction: row; 
-        gap: 70px; 
-        max-width: 1200px; 
-        width: 100%;
+        flex-direction: column;
+        justify-content: center; /* Centre verticalement le contenu du texte */
+        background-color: var(--color-white); /* Supprime l'ombre jaune sur le texte */
+        box-shadow: none; /* Pas d'ombre sur la boîte de texte */
     }
 
-    .intro-image {
-        width: auto; 
-        height: 100%; 
-        object-fit: cover; 
-        border-radius: 0; 
-        box-shadow: -10px 10px 0px var(--color-yellow-medium); 
-    }
-
-    .intro-text {
-        width: 50%; 
-        margin: 0 auto; 
-        text-align: left; 
-    }
-
-    .intro-text h1 {
-        font-size: 2.5rem; /* Taille adaptée pour desktop */
-    }
-
-    .intro-text p {
-        font-size: 1.2rem; /* Taille adaptée pour desktop */
-    }
-
-    .btn-learn-more {
-        margin: 1em 0 0; /* Positionne le bouton en haut à gauche */
-    }
+    
 }
 
+
+/* Styles pour le menu hamburger */
+.hamburger-menu {
+    display: none; /* Caché par défaut */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    background: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-black);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.intro-extra {
+    display: flex;
+    flex-direction: column; /* Empile l'image et le texte verticalement par défaut */
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+}
+
+.intro-textbox {
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+    font-family: var(--font-secondary);
+    color: var(--color-black);
+    padding: 20px;
+    background-color: var(--color-white);
+    box-shadow: -10px 10px 0px var(--color-yellow-medium);
+    border-radius: 5px;
+}
+
+.intro-textbox h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.intro-textbox p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.intro-textbox .btn-learn-more {
+    display: inline-block;
+    color: var(--color-blue-primary);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.intro-textbox .btn-learn-more:hover {
+    color: var(--color-yellow-medium);
+}
+
+/* STYLES CONTACT */
