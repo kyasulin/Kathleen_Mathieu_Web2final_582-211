@@ -50,7 +50,6 @@ a:hover {
 /* STYLES POUR ACCUEIL */
 
 /*------ Section Hero ------*/
-/*----- Header -----*/
 #hero {
     display: flex;
     flex-direction: column;
@@ -67,9 +66,25 @@ a:hover {
     font-family: var(--font-primary);
     font-size: 3rem;
     color: var(--color-black); /* Change la couleur du texte en noir */
-    position: relative; /* Nécessaire pour positionner le rectangle */
-    z-index: 2; /* Place le texte au-dessus du rectangle */
+    position: relative;
+    z-index: 2; 
     margin-bottom: 1em;
+    display: inline-block;
+}
+
+/* Surlignage jaune sous le mot ACCUEIL */
+#hero h1::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.35em;
+    background: var(--color-yellow-medium);
+    position: absolute;
+    left: 0;
+    bottom: 0.1em;
+    z-index: -1;
+    border-radius: 2px;
+    opacity: 0.7;
 }
 
 .hero-image {
@@ -77,19 +92,17 @@ a:hover {
     height: 509px; /* Hauteur fixe */
     object-fit: cover; /* Conserve les proportions de l'image tout en remplissant l'espace */
     object-position: center; /* Centre l'image */
-    display: block; /* S'assure que l'image est un élément de bloc */
+    display: block;
     margin: 0; /* Supprime toute marge autour de l'image */
     padding: 0; /* Supprime tout espacement autour de l'image */
-    transform: translateY(-40px); /* Déplace l'image 20px vers le haut */
+    transform: translateY(-40px); /* Déplace l'image 40px vers le haut */
 }
 
-/* Augmenter la taille du logo */
 header .logo {
     width: 160px; 
     height: auto; 
 }
 
-/* Réduire la taille de l'image utilisateur et ajuster la marge */
 header .user-icon {
     margin-right: 5px; /* Réduit la marge à droite */
     height: 100px;
@@ -99,110 +112,66 @@ header .user-icon {
 /* Section Intro */
 #intro {
     display: flex;
-    flex-direction: column; /* Empile les sections verticalement */
+    flex-direction: column;
     align-items: center;
-    gap: 50px; /* Espace entre les sections */
+    gap: 50px;
     padding: 20px;
     background-color: var(--color-white);
 }
 
-.intro-content {
+.intro-content,
+.intro-extra {
     display: flex;
-    flex-direction: column; /* Empile l'image et le texte */
-    gap: 20px; /* Espace entre l'image et le texte */
+    flex-direction: column;
+    gap: 20px;
     width: 100%;
+    align-items: center;
 }
 
 .intro-image {
-    width: 100%; /* L'image occupe toute la largeur */
-    height: auto; /* Coins arrondis */
-    object-fit: cover;
-    box-shadow: -10px 10px 0px var(--color-yellow-medium); /* Ombre jaune pâle solide */
-}
-
-.intro-text {
-    width: 100%; /* Le texte occupe toute la largeur */
-    text-align: left; /* Centre le texte pour un meilleur rendu mobile */
-}
-
-.intro-text h1 {
-    font-size: 2rem; /* Taille adaptée pour mobile */
-}
-
-.intro-text p {
-    font-size: 1rem; /* Taille adaptée pour mobile */
-}
-
-/* Réduction de la taille des images */
-.intro-content .intro-image,
-.intro-extra .intro-image {
-    width: 40%; /* Réduit la largeur de l'image à 40% du conteneur */
-    height: auto; /* Maintient les proportions de l'image */
-    object-fit: cover; /* Conserve les proportions tout en remplissant l'espace */
-    box-shadow: -10px 10px 0px var(--color-yellow-medium); /* Ombre jaune uniquement sur l'image */
-}
-
-/* Bouton "Apprendre plus" */
-.btn-learn-more {
-    margin: 1em auto 0; /* Centre le bouton sur mobile */
-}
-
-/* Version desktop (media query) */
-@media (min-width: 768px) {
-    #intro {
-        gap: 70px; /* Espace entre les sections */
-    }
-
-    .intro-content,
-    .intro-extra {
-        display: flex;
-        flex-direction: row; /* Aligne l'image et le texte horizontalement */
-        justify-content: center;
-        align-items: stretch; /* Étire les éléments pour qu'ils aient la même hauteur */
-        gap: 50px; /* Espace entre l'image et le texte */
-        max-width: 1200px;
-        margin: 0 auto; /* Centre la section */
-    }
-
-    .intro-content .intro-image,
-    .intro-extra .intro-image {
-        width: 35%; /* Réduit davantage la largeur de l'image sur desktop */
-        height: auto; /* Maintient les proportions */
-    }
-
-    .intro-content .intro-text,
-    .intro-extra .intro-textbox {
-        width: 50%; /* Le texte occupe 50% de la largeur */
-        display: flex;
-        flex-direction: column;
-        justify-content: center; /* Centre verticalement le contenu du texte */
-        background-color: var(--color-white); /* Supprime l'ombre jaune sur le texte */
-        box-shadow: none; /* Pas d'ombre sur la boîte de texte */
-    }
-
-    
-}
-
-
-/* Styles pour le menu hamburger */
-.hamburger-menu {
-    display: none; /* Caché par défaut */
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 30px;
-    background: none;
-    cursor: pointer;
-    z-index: 10;
-}
-
-.hamburger-menu span {
-    display: block;
     width: 100%;
-    height: 3px;
-    background-color: var(--color-black);
-    border-radius: 2px;
-    transition: all 0.3s ease;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px auto;
+    box-shadow: -10px 10px 0px var(--color-yellow-medium);
+}
+
+.intro-text,
+.intro-textbox {
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+    font-family: var(--font-secondary);
+    color: var(--color-black);
+    padding: 20px 0 20px 0;
+    background-color: var(--color-white);
+    box-shadow: none;
+    border-radius: 5px;
+    transition: box-shadow 0.3s, transform 0.3s; /* Ajoute la transition pour un retour fluide */
+}
+
+.intro-text h1,
+.intro-textbox h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: var(--color-black); /* Force la couleur noire pour les titres */
+    text-transform: capitalize; /* Met uniquement la première lettre de chaque mot en majuscule */
+}
+
+.intro-text h1,
+.intro-textbox h1 {
+    text-transform: none;
+}
+.intro-text h1::first-letter,
+.intro-textbox h1::first-letter {
+    text-transform: uppercase;
+}
+
+.intro-text p,
+.intro-textbox p {
+    font-size: 1rem;
+    margin-bottom: 20px;
 }
 
 .intro-extra {
@@ -221,7 +190,7 @@ header .user-icon {
     color: var(--color-black);
     padding: 20px;
     background-color: var(--color-white);
-    box-shadow: -10px 10px 0px var(--color-yellow-medium);
+    box-shadow: none;
     border-radius: 5px;
 }
 
@@ -236,15 +205,281 @@ header .user-icon {
 }
 
 .intro-textbox .btn-learn-more {
-    display: inline-block;
-    color: var(--color-blue-primary);
-    text-decoration: none;
+    color: var(--color-black); /* Noir par défaut */
+    text-decoration: underline;
+    text-decoration-color: var(--color-yellow-medium);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
     font-weight: bold;
-    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    align-self: flex-start;
+    margin: 1em 0 0 0;
+    padding: 0.3em 1.2em 0.3em 0;
+    cursor: pointer;
+    transition: 
+        color 0.3s,
+        text-decoration-color 0.3s,
+        transform 0.3s; /* transition pour l'effet grossissant */
 }
 
 .intro-textbox .btn-learn-more:hover {
     color: var(--color-yellow-medium);
+    text-decoration-color: var(--color-yellow-medium);
+    transform: scale(1.08); /* Grossit légèrement le bouton au survol */
+}
+
+/* Bouton "Apprendre plus" - styles par défaut */
+.btn-learn-more {
+    display: inline-block;
+    align-self: flex-start; /* Place le bouton en bas à gauche du texte */
+    margin: 1em 0 0 0;
+    padding: 0.3em 1.2em 0.3em 0;
+    color: var(--color-black);
+    background: none;
+    border: none;
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--color-yellow-medium);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+    cursor: pointer;
+    transition: 
+        color 0.3s,
+        text-decoration-color 0.3s,
+        transform 0.3s; /*transition pour l'effet grossissant */
+}
+
+/* Effet au survol */
+.btn-learn-more:hover {
+    color: var(--color-yellow-medium);
+    text-decoration-color: var(--color-yellow-medium);
+    transform: scale(1.08); /* Grossit légèrement le bouton au survol */
+}
+
+/* Ajout d'un effet au survol pour la boîte de texte */
+.intro-textbox:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18); /* Ombre noire douce */
+    transform: scale(1.03);                   /* Grossit légèrement la boîte */
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+/* Effet au survol pour toutes les boîtes de texte (Travail personnel et Auditions 2024) */
+.intro-text:hover,
+.intro-textbox:hover {
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18); /* Ombre noire douce autour de la boîte */
+    transform: scale(1.03);                   /* Grossit légèrement la boîte */
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+/* Version desktop (media query) */
+@media (min-width: 768px) {
+    #intro {
+        gap: 70px;
+    }
+
+    .intro-content,
+    .intro-extra {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        gap: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .intro-content .intro-image,
+    .intro-extra .intro-image {
+        width: 35%;
+        height: auto;
+        margin: 0;
+        box-shadow: -10px 10px 0px var(--color-yellow-medium);
+        object-fit: cover;
+    }
+
+    .intro-content .intro-image {
+        width: 400px;
+        height: 400px;
+        max-width: 100%;
+        aspect-ratio: 1 / 1; /* Images carrées */
+    }
+
+    .intro-content .intro-text,
+    .intro-extra .intro-textbox {
+        width: 50%;
+        max-width: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--color-white);
+        box-shadow: none;
+        padding: 20px;
+    }
+
+    .intro-textbox {
+        margin-bottom: 40px;
+    }
+
+    /* Effet au survol pour toutes les boîtes de texte (Travail personnel et Auditions 2024) en desktop aussi */
+    .intro-text:hover,
+    .intro-textbox:hover {
+        box-shadow: 0 8px 32px rgba(0,0,0,0.18); /* Ombre noire douce autour de la boîte */
+        transform: scale(1.03);                   /* Grossit légèrement la boîte */
+        transition: box-shadow 0.3s, transform 0.3s;
+    }
 }
 
 /* STYLES CONTACT */
+.contact-hero-image {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    max-height: 220px;
+}
+
+/* Titre Contactez-Nous avec surlignage jaune */
+.contact-title {
+    font-family: var(--font-primary);
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 1.2em 0 0.5em 0;
+    text-align: left;
+    position: relative;
+}
+.contact-title .highlight-bg {
+    background: linear-gradient(180deg, transparent 60%, var(--color-yellow-medium) 60%);
+    border-radius: 2px;
+    padding: 0 0.1em;
+}
+
+/* Bloc infos contact */
+.contact-info {
+    margin-bottom: 2em;
+}
+.contact-info h2 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    margin: 1em 0 0.5em 0;
+}
+.contact-info ul {
+    margin: 0 0 1em 1.2em;
+    padding: 0;
+}
+.contact-info li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5em;
+}
+.contact-info p {
+    font-size: 1.1rem;
+    margin: 0.3em 0;
+}
+.contact-info .icon {
+    margin-right: 0.5em;
+}
+
+/* Formulaire */
+.contact-form {
+    border: 2px solid #222;
+    padding: 1.5em 1em;
+    border-radius: 8px;
+    background: #fff;
+    margin-bottom: 2em;
+    max-width: 95vw;
+}
+.contact-form h2 {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    margin-bottom: 1em;
+}
+.contact-form label {
+    font-weight: bold;
+    margin-top: 1em;
+    display: block;
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.3em;
+    margin-bottom: 1em;
+    border: 1px solid #222;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+}
+.contact-submit {
+    background: var(--color-yellow-medium);
+    color: #222;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1.5em;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 0.5em;
+    transition: background 0.3s;
+}
+.contact-submit:hover {
+    background: #ffe082;
+}
+
+.footer-container {
+    background: #010B31;
+    color: #fff;
+    padding: 2em 1em 1em 1em;
+    text-align: center;
+}
+.footer-logo img {
+    width: 220px;
+    max-width: 100%;
+    margin-bottom: 0.5em;
+}
+.footer-contacts h3,
+.footer-subscribe h3 {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+    letter-spacing: 1px;
+}
+.footer-contacts a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-contacts a:hover {
+    color: var(--color-yellow-medium);
+}
+.footer-social {
+    margin: 1em 0;
+}
+.footer-social img {
+    width: 32px;
+    height: 32px;
+    margin: 0 0.5em;
+    filter: invert(100%);
+    transition: transform 0.3s;
+}
+.footer-social a:hover img {
+    transform: scale(1.1);
+}
+.footer-gatineau {
+    margin-top: 1em;
+}
+.footer-gatineau img {
+    width: 90px;
+    display: block;
+    margin: 0 auto 0.5em auto;
+}
+.footer-gatineau span {
+    display: block;
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: #fff;
+}

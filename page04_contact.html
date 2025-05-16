@@ -9,6 +9,99 @@
     <title>Le choeur qui bat</title>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <img src="./images/logo.png" alt="Logo Choeur Qui Bat" class="header-logo">
+            <button class="hamburger-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="page02_concerts.html">Concerts</a></li>
+                    <li><a href="page03_equipe.html">Notre Équipe</a></li>
+                    <li><a href="page04_contact.html">Contactez-nous</a></li>
+                </ul>
+                <img src="images/bouton_utilisateur.png" alt="Utilisateur" class="user-icon">
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Image de contact -->
+        <section class="contact-hero">
+            <img src="./images/image_corps_contact.jpg" alt="Chorale" class="contact-hero-image">
+        </section>
+
+        <!-- Bloc Contact -->
+        <section class="contact-section">
+            <h1 class="contact-title">
+                Contactez-<span class="highlight-bg">Nous</span>
+            </h1>
+
+            <div class="contact-info">
+                <h2>Lorem Ipsum Dolor</h2>
+                <ul>
+                    <li>Lorem Ipsum Dolor Sit Amet</li>
+                    <li>Lorem Ipsum Dolor Sit Amet</li>
+                    <li>Lorem Ipsum Dolor Sit Amet</li>
+                </ul>
+
+                <h2>Lorem Ipsum Dolor</h2>
+                <p><span class="icon">&#128222;</span> 123-456-7890</p>
+                <p><span class="icon">&#xf09a;</span> Lorem Ipsum</p>
+                <p><span class="icon">&#9993;</span> <a href="mailto:lorem@ipsumdo.lo">lorem@ipsumdo.lo</a></p>
+            </div>
+
+            <!-- Formulaire -->
+            <form class="contact-form">
+                <h2>Formulaire</h2>
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" required>
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" required>
+                <label for="tel">Numéro de téléphone</label>
+                <input type="tel" id="tel" name="tel">
+                <label for="email">Adresse Courriel</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <button type="submit" class="contact-submit">Soumettre</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Section Logo -->
+            <div class="footer-logo">
+                <img src="./images/logo_gatineau.png" alt="Logo Gatineau">
+            </div>
     
+            <!-- Section Contacts -->
+            <div class="footer-contacts">
+                <h3>Contacts</h3>
+                <p><span>&#9742;</span> 613 447-0281</p>
+                <p><span>&#9993;</span> <a href="mailto:info@choeurquibat.ca">info@choeurquibat.ca</a></p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><img src="./images/FB.png" alt="Facebook"></a>
+                    <a href="#" aria-label="YouTube"><img src="./images/YT.png" alt="YouTube"></a>
+                    <a href="#" aria-label="Instagram"><img src="./images/IG.png" alt="Instagram"></a>
+                </div>
+            </div>
+    
+            <!-- Section Abonnement -->
+            <div class="footer-subscribe">
+                <h3>Abonnez-vous</h3>
+                <form action="#" method="post">
+                    <input type="email" placeholder="Entrez votre adresse courriel ici" required>
+                    <button type="submit">Soumettre</button>
+                </form>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

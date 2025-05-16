@@ -128,7 +128,9 @@ a {
 }
 
 .header-logo img {
-    width: 50px; /* Taille du logo */
+    width: 220px;    /* Augmente la taille du logo Gatineau */
+    max-width: 100%;
+    margin-bottom: 0.5em;
     transition: filter 0.3s ease; /* Ajoute une transition fluide */
 }
 
@@ -208,7 +210,8 @@ footer {
 }
 
 .footer-logo img {
-    width: 150px;
+    width: 220px;    /* Augmente la taille du logo Gatineau */
+    max-width: 100%;
     margin-bottom: 0.5em;
 }
 
@@ -218,10 +221,13 @@ footer {
     color: var(--color-yellow-medium);
 }
 
-.footer-contacts h3, .footer-subscribe h3 {
+.footer-contacts h3,
+.footer-subscribe h3 {
     font-family: var(--font-primary);
-    font-size: 1.25rem;
+    font-size: 1.5rem;         /* Plus grand */
+    text-transform: uppercase;  /* Tout en majuscule */
     margin-bottom: 0.5em;
+    letter-spacing: 1px;       /* Optionnel : espace entre les lettres pour plus d'impact */
 }
 
 .footer-contacts p {
@@ -229,8 +235,13 @@ footer {
 }
 
 .footer-contacts a {
-    color: var(--color-yellow-light);
+    color: #fff; /* Blanc par défaut */
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-contacts a:hover {
+    color: var(--color-yellow-medium); /* Jaune au survol */
 }
 
 .footer-social a {
