@@ -149,6 +149,22 @@ header .user-icon {
     box-shadow: -10px 10px 0px var(--color-yellow-medium);
 }
 
+/* Pour la version mobile : aère la boîte Travail Personnel */
+.intro-text {
+    margin: 30px auto !important;      /* Plus d'espace au-dessus et en dessous */
+    padding: 20px 18px !important;     /* Espace intérieur sur tous les côtés */
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    background-color: var(--color-white);
+    border-radius: 5px;
+}
+
+.intro-text p {
+    margin: 0 0 1em 0;                /* Espace sous chaque paragraphe */
+    line-height: 1.7;                 /* Aère le texte */
+}
+
 .intro-text,
 .intro-textbox {
     width: 100%;
@@ -197,13 +213,11 @@ header .user-icon {
 .intro-textbox {
     width: 100%;
     max-width: 600px;
-    text-align: left;
-    font-family: var(--font-secondary);
-    color: var(--color-black);
-    padding: 20px;
-    background-color: var(--color-white);
-    box-shadow: none;
-    border-radius: 5px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 18px;
+    padding-right: 18px;
 }
 
 .intro-textbox h1 {
