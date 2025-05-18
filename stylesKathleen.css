@@ -20,12 +20,16 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
+
+    /* Marges latérales sur mobile pour aérer les éléments */
+    padding-left: 5vw;
+    padding-right: 5vw;
+    box-sizing: border-box;
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%; 
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,11 +59,13 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 100px; /* Pour éviter le chevauchement avec le header */
+    padding-top: 0; /* Pour éviter le chevauchement avec le header */
+    margin-top: 0;
     text-align: center;
-    margin: 0; /* Supprime les marges de la section */
-    padding: 0; /* Supprime les espacements de la section */
-    width: 100%; /* Assure que la section occupe toute la largeur */
+    margin: 0 !important; /* Supprime les marges de la section */
+    padding: 0 !important; /* Supprime les espacements de la section */
+    width: 100vw;
+    position: relative;
 }
 
 #hero h1 {
@@ -88,14 +94,20 @@ a:hover {
 }
 
 .hero-image {
-    width: 100%; /* L'image occupe toute la largeur */
-    height: 509px; /* Hauteur fixe */
-    object-fit: cover; /* Conserve les proportions de l'image tout en remplissant l'espace */
-    object-position: center; /* Centre l'image */
     display: block;
-    margin: 0; /* Supprime toute marge autour de l'image */
-    padding: 0; /* Supprime tout espacement autour de l'image */
-    transform: translateY(-40px); /* Déplace l'image 40px vers le haut */
+    width: 100vw;
+    min-width: 100vw;
+    max-width: 100vw;
+    height: 220px;           /* Hauteur réduite */
+    max-height: 220px;       /* Limite la hauteur */
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    padding: 0;
+    border: none;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 header .logo {
@@ -332,6 +344,66 @@ header .user-icon {
         transform: scale(1.03);                   /* Grossit légèrement la boîte */
         transition: box-shadow 0.3s, transform 0.3s;
     }
+    
+    /*----- Styles pour la section Contact -----*/
+    .contact-section {
+        max-width: 900px;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-title {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contact-info {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contact-info ul {
+        text-align: left; /* Force l'alignement à gauche pour la liste */
+        margin-left: 1.2em; /* Garde l'indentation */
+    }
+
+    .contact-form {
+        max-width: 2000px; 
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 2em;
+        padding-right: 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-form-row {
+        display: flex;
+        gap: 2em;
+        width: 100%;
+    }
+    .contact-form-group {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .contact-form textarea {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 1em auto;
+        display: block;
+    }
+    .contact-submit {
+        align-self: flex-start;
+        margin-left: 0;
+        margin-top: 0.5em;
+    }
 }
 
 /* STYLES CONTACT */
@@ -348,8 +420,9 @@ header .user-icon {
     font-size: 2.2rem;
     font-weight: bold;
     margin: 1.2em 0 0.5em 0;
-    text-align: left;
+    text-align: center; /* Centre uniquement le titre */
     position: relative;
+    color: var(--color-black);
 }
 .contact-title .highlight-bg {
     background: linear-gradient(180deg, transparent 60%, var(--color-yellow-medium) 60%);
@@ -382,47 +455,82 @@ header .user-icon {
     margin-right: 0.5em;
 }
 
+.contact-info a[href^="mailto"] {
+    color: #000;
+    transition: color 0.3s;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.contact-info a[href^="mailto"]:hover,
+.contact-info a[href^="mailto"]:focus {
+    color: var(--color-yellow-medium);
+}
+
 /* Formulaire */
 .contact-form {
     border: 2px solid #222;
     padding: 1.5em 1em;
-    border-radius: 8px;
+    border-radius: 0; /* Coins carrés */
     background: #fff;
     margin-bottom: 2em;
     max-width: 95vw;
+
+    /* Marges latérales pour aérer le formulaire */
+    padding-left: 2vw;
+    padding-right: 2vw;
+    box-sizing: border-box;
 }
 .contact-form h2 {
     font-family: var(--font-primary);
     font-size: 2rem;
     margin-bottom: 1em;
+    text-align: left; /* Aligne "Formulaire" à gauche */
 }
 .contact-form label {
     font-weight: bold;
     margin-top: 1em;
     display: block;
 }
+.contact-form label[for="message"] {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-right: auto;
+}
 .contact-form input,
 .contact-form textarea {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     padding: 0.5em;
     margin-top: 0.3em;
     margin-bottom: 1em;
     border: 1px solid #222;
-    border-radius: 4px;
     font-size: 1rem;
     font-family: var(--font-secondary);
+}
+.contact-form input[type="email"] {
+    color: #000;
+    transition: color 0.3s;
+}
+.contact-form input[type="email"]:hover,
+.contact-form input[type="email"]:focus {
+    color: var(--color-yellow-medium);
 }
 .contact-submit {
     background: var(--color-yellow-medium);
     color: #222;
     font-weight: bold;
-    border: none;
-    border-radius: 5px;
+    border: 2px solid #222;
+    border-radius: 10px;
     padding: 0.5em 1.5em;
     font-size: 1.1rem;
     cursor: pointer;
     margin-top: 0.5em;
-    transition: background 0.3s;
+    transition: background 0.3s, border 0.3s;
+    font-family: 'DM Serif Text', serif;
 }
 .contact-submit:hover {
     background: #ffe082;
@@ -482,4 +590,12 @@ header .user-icon {
     font-size: 2rem;
     letter-spacing: 2px;
     color: #fff;
+}
+
+.contact-section,
+.contact-info,
+.contact-form {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    box-sizing: border-box;
 }

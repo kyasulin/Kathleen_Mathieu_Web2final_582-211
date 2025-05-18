@@ -10,6 +10,7 @@ body {
 :root {
     --color-white: #FFFFFF;
     --color-blue-primary: #2E4EB7;
+    --color-blue-medium: #19307F;
     --color-yellow-light: #FFEB89;
     --color-black: #000000;
     --color-blue-dark: #010B31;
@@ -128,7 +129,7 @@ a {
 }
 
 .header-logo img {
-    width: 220px;    /* Augmente la taille du logo Gatineau */
+    width: 320px;
     max-width: 100%;
     margin-bottom: 0.5em;
     transition: filter 0.3s ease; /* Ajoute une transition fluide */
@@ -210,7 +211,7 @@ footer {
 }
 
 .footer-logo img {
-    width: 220px;    /* Augmente la taille du logo Gatineau */
+    width: 320px;
     max-width: 100%;
     margin-bottom: 0.5em;
 }
@@ -242,6 +243,10 @@ footer {
 
 .footer-contacts a:hover {
     color: var(--color-yellow-medium); /* Jaune au survol */
+}
+
+.footer-contacts a[href^="mailto"] {
+    text-decoration: underline;
 }
 
 .footer-social a {
@@ -284,7 +289,8 @@ footer {
 }
 
 .footer-subscribe button:hover {
-    background-color: var(--color-yellow-medium);
+    background-color: var(--color-blue-medium);
+    color: var(--color-white);
 }
 
 /* Styles responsive pour la version desktop */
@@ -293,10 +299,151 @@ footer {
     .footer-container {
         flex-direction: row;
         justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+        gap: 0; /* retire le gap si présent */
+    }
+
+    .footer-logo,
+    .footer-contacts,
+    .footer-subscribe {
+        flex: 1;
+    }
+
+    .footer-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* centre le bloc Contact */
+        justify-content: center;
+    }
+
+    .footer-subscribe {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Place le titre à gauche */
+        margin-left: 2em;
+    }
+
+    .footer-subscribe h3 {
+        align-self: flex-start; /* Titre à gauche */
+        margin-bottom: 0.5em;
         text-align: left;
     }
 
-    .footer-contacts, .footer-subscribe {
+    .footer-subscribe form {
+        flex-direction: row;
+        align-items: flex-end; /* Bouton reste en bas à gauche de l'input */
+        justify-content: flex-start;
+        gap: 0.5em;
+        width: 100%;
+        min-width: 320px;
+        max-width: 400px;
+    }
+
+    .footer-logo {
+        display: flex;
+        flex-direction: column;
         align-items: flex-start;
+    }
+
+    .footer-contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* centre le bloc Contact */
+        justify-content: center;
+    }
+
+    .footer-subscribe {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Place le titre à gauche */
+        margin-left: 2em;
+    }
+
+    .footer-subscribe h3 {
+        align-self: flex-start; /* Titre à gauche */
+        margin-bottom: 0.5em;
+        text-align: left;
+    }
+
+    .footer-subscribe form {
+        flex-direction: row;
+        align-items: flex-end; /* Bouton reste en bas à gauche de l'input */
+        justify-content: flex-start;
+        gap: 0.5em;
+        width: 100%;
+        min-width: 320px;
+        max-width: 400px;
+    }
+
+    .footer-subscribe form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5em;
+        width: 100%;
+        min-width: 320px;
+        max-width: 400px;
+    }
+    .footer-subscribe-row {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        width: 100%;
+        gap: 0.5em;
+    }
+    .footer-subscribe input[type="email"] {
+        width: 260px;
+        min-width: 220px;
+        max-width: 320px;
+        box-sizing: border-box;
+    }
+    .footer-subscribe button {
+        padding: 0.3em 0.7em;
+        font-size: 0.85rem;
+        border-radius: 4px;
+        min-width: 50px;
+        max-width: 80px;
+        align-self: flex-end;
+    }
+    .footer-subscribe-row {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        width: 100%;
+        gap: 0.5em;
+    }
+    .footer-subscribe button {
+        align-self: flex-end;
+    }
+    .footer-subscribe form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5em;
+        width: 100%;
+        min-width: 320px;
+        max-width: 400px;
+    }
+    .footer-subscribe input[type="email"] {
+        width: 260px;
+        min-width: 220px;
+        max-width: 320px;
+        box-sizing: border-box;
+    }
+    .footer-subscribe button {
+        align-self: flex-start; /* Place le bouton à gauche sous l'input */
+        margin-top: 0.2em;
+        padding: 0.3em 0.7em;
+        font-size: 0.85rem;
+        border-radius: 4px;
+        min-width: 50px;
+        max-width: 80px;
     }
 }
