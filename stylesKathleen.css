@@ -351,6 +351,37 @@ header .user-icon {
         margin-bottom: 40px;
     }
 
+    /* Aligne uniquement Travail Personnel (intro-text) avec l'image */
+    .intro-extra {
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        gap: 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .intro-extra .intro-image {
+        width: 400px;
+        height: 400px;
+        max-width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        margin: 0;
+        box-shadow: -10px 10px 0px var(--color-yellow-medium);
+        display: block;
+    }
+    .intro-extra .intro-text {
+        width: 50%;
+        max-width: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--color-white);
+        box-shadow: none;
+        padding: 20px;
+        margin: 0;
+    }
+
     /* Effet au survol pour toutes les boîtes de texte (Travail personnel et Auditions 2024) en desktop aussi */
     .intro-text:hover,
     .intro-textbox:hover {
