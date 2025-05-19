@@ -9,26 +9,29 @@
     <title>Le choeur qui bat</title>
 </head>
 <body>
+    <input type="checkbox" id="menu-toggle" hidden>
     <!-- Header -->
     <header>
         <div class="header-container">
-            <img src="./images/logo.png" alt="Logo Choeur Qui Bat" class="header-logo">
-            <button class="hamburger-menu" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="header-nav">
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="page02_concerts.html">Concerts</a></li>
-                    <li><a href="page03_equipe.html">Notre Équipe</a></li>
-                    <li><a href="page04_contact.html">Contactez-nous</a></li>
-                </ul>
-                <img src="images/bouton_utilisateur.png" alt="Utilisateur" class="user-icon">
-            </nav>
+          <div class="header-logo">
+            <img src="./images/logo.png" alt="Logo Choeur Qui Bat">
+          </div>
+          <label for="menu-toggle" class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <nav class="header-nav" id="nav-menu">
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="page02_concerts.html">Concerts</a></li>
+                <li><a href="page03_equipe.html">Notre Équipe</a></li>
+                <li><a href="page04_contact.html">Contactez-nous</a></li>
+            </ul>
+            <img src="images/bouton_utilisateur.png" alt="Utilisateur" class="user-icon">
+          </nav>
         </div>
-    </header>
+      </header>
 
     <!-- Section Hero -->
     <section id="hero">
