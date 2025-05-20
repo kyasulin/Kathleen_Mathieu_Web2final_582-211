@@ -86,7 +86,6 @@ nav ul {
 
 .header-logo {
     margin-left: 15px;
-    transition: filter 0.3s ease; /* Ajoute une transition fluide */
 }
 
 .header-nav ul {
@@ -121,11 +120,6 @@ header .header-nav .user-icon {
 .header-nav a:hover {
     color: var(--color-yellow-medium); /* Couleur au survol */
 }
-
-
-
-
-  
 
 /* ----- Styles pour le menu hamburger ----- */
 .hamburger {
@@ -449,16 +443,15 @@ footer {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    height: 10vh;
+  }
+
+  header .header-nav .user-icon {
+    display: none;
+    width: 75px;
     height: auto;
-    padding: 1rem;
+    margin-right: 15px;
   }
-
-  .header-logo {
-    width: auto;
-    margin: 0;
-    align-self: flex-start;
-  }
-
   .hamburger-menu {
     display: flex;
     flex-direction: column;
