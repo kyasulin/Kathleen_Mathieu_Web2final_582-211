@@ -172,6 +172,29 @@ a:hover {
   background-color: var(--color-yellow-light);
 }
 
+/* Styles pour les boutons de la page concerts */
+.concert-card button {
+    width: 200px;
+    background-color: var(--color-yellow-medium); /* Fond jaune */
+    color: var(--color-black); /* Texte noir */
+    border: 2px solid var(--color-black); /* Bordure noire */
+    border-radius: 20px; /* Coins arrondis */
+    padding: 10px 20px; /* Espacement interne */
+    font-family: var(--font-secondary); /* Police secondaire */
+    font-size: 1rem; /* Taille du texte */
+    font-weight: bold; /* Texte en gras */
+    cursor: pointer; /* Curseur en forme de main au survol */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animation fluide */
+    margin-left: auto; /* Aligne le bouton à droite */
+    display: block; /* S'assure que le bouton occupe une ligne entière dans son conteneur */
+}
+
+/* Effet au survol */
+.concert-card button:hover {
+    background-color: var(--color-yellow-light); /* Fond jaune clair au survol */
+    transform: scale(1.05); /* Légère augmentation de la taille */
+}
+
 /*------ Section Animation ------*/
 @keyframes slideIn {
   from {
@@ -210,6 +233,28 @@ header .logo {
   animation: pulse-logo 2.5s infinite ease-in-out;
 }
 
+@keyframes logo-vie-subtile {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.015);
+    opacity: 0.95;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animation {
+  animation: logo-vie-subtile 4s ease-in-out infinite;
+}
 /*------ Responsive Mobile ------*/
 @media (max-width: 768px) {
   .header-container {
@@ -286,12 +331,13 @@ header .logo {
 }
 
 .equipe-titre {
-  font-size: 3rem;
   font-family: var(--font-primary);
-  text-align: center;
-  margin: 2rem 0 2rem;
-  color: var(--color-black);
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin: 1.2em 0 1em 0;
+  text-align: center; /* Centre uniquement le titre */
   position: relative;
+  color: var(--color-black);
 }
 
 .equipe-titre .highlight-bg {
