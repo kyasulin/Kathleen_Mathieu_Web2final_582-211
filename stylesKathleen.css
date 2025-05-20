@@ -503,13 +503,15 @@ header .user-icon {
 
 .contact-info a[href^="mailto"] {
     color: #000;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
     font-weight: bold;
     text-decoration: underline;
+    display: inline-block;
 }
 .contact-info a[href^="mailto"]:hover,
 .contact-info a[href^="mailto"]:focus {
     color: var(--color-yellow-medium);
+    transform: scale(1.08); /* Grossit légèrement l'email au survol */
 }
 
 /* Formulaire */
@@ -575,11 +577,12 @@ header .user-icon {
     font-size: 1.1rem;
     cursor: pointer;
     margin-top: 0.5em;
-    transition: background 0.3s, border 0.3s;
+    transition: background 0.3s, border 0.3s, transform 0.3s; /* Ajoute la transition pour l'effet grossissant */
     font-family: 'DM Serif Text', serif;
 }
 .contact-submit:hover {
     background: #ffe082;
+    transform: scale(1.08); /* Grossit légèrement le bouton au survol */
 }
 
 .footer-container {
