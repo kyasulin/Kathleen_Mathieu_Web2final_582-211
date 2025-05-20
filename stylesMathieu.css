@@ -1,75 +1,79 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
+/* Importation des polices depuis Google Fonts :
+   - DM Serif Text : utilisée pour les titres.
+   - Schibsted Grotesk : utilisée pour le texte général. */
 
 :root {
-    --color-white: #FFFFFF;
-    --color-blue-primary: #2E4EB7;
-    --color-yellow-light: #FFEB89;
-    --color-black: #000000;
-    --color-blue-dark: #19307F;
-    --color-yellow-medium: #F4CB5A;
-    --font-primary: 'DM Serif Text', serif;
-    --font-secondary: 'Schibsted Grotesk', sans-serif;
+    /* Déclaration des variables CSS globales pour les couleurs et les polices */
+    --color-white: #FFFFFF; 
+    --color-blue-primary: #2E4EB7; 
+    --color-yellow-light: #FFEB89; 
+    --color-black: #000000; 
+    --color-blue-dark: #19307F; 
+    --color-yellow-medium: #F4CB5A; 
+    --font-primary: 'DM Serif Text', serif; /* Police principale pour les titres */
+    --font-secondary: 'Schibsted Grotesk', sans-serif; /* Police secondaire pour le texte général */
 }
 
 /*----- Styles Généraux -----*/
 body {
-    background-color: var(--color-white);
-    font-family: var(--font-secondary);
-    color: var(--color-black);
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
+    background-color: var(--color-white); 
+    font-family: var(--font-secondary); 
+    color: var(--color-black); 
+    margin: 0; 
+    padding: 0; 
+    line-height: 1.6; /* Définit l'espacement vertical entre les lignes de texte */
 
     /* Marges latérales sur mobile pour aérer les éléments */
-    padding-left: 5vw;
-    padding-right: 5vw;
-    box-sizing: border-box;
+    padding-left: 5vw; 
+    padding-right: 5vw; 
+    box-sizing: border-box; /* Inclut les bordures et le padding dans les dimensions totales de l'élément */
 }
 
 html, body {
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0 !important; /* Supprime les marges par défaut avec une priorité élevée */
+    padding: 0 !important; /* Supprime les espacements internes par défaut avec une priorité élevée */
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-primary);
-    margin: 0;
+    font-family: var(--font-primary); /* Applique la police principale aux titres */
+    margin: 0; /* Supprime les marges par défaut autour des titres */
 }
 
 p {
-    margin: 0 0 1em;
+    margin: 0 0 1em; /* Ajoute une marge inférieure de 1em pour espacer les paragraphes */
 }
 
 a {
-    color: var(--color-black);
-    text-decoration: none;
-    transition: color 0.3s ease;
+    color: var(--color-black); 
+    text-decoration: none; /* Supprime le soulignement des liens */
+    transition: color 0.3s ease; /* Ajoute une transition fluide pour le changement de couleur */
 }
 
-a:hover {
+a:hover {/* Change la couleur du lien en jaune moyen au survol */
     color: var(--color-yellow-medium);
 }
 
 /*------ Section Hero ------*/
 #hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 0; /* Pour éviter le chevauchement avec le header */
-    margin-top: 0;
-    text-align: center;
-    margin: 0 !important; /* Supprime les marges de la section */
-    padding: 0 !important; /* Supprime les espacements de la section */
-    width: 100vw;
-    position: relative;
+    display: flex; /* Utilise Flexbox pour organiser les éléments enfants */
+    flex-direction: column; /* Aligne les éléments enfants verticalement */
+    align-items: center; /* Centre les éléments horizontalement */
+    justify-content: flex-start; /* Aligne les éléments en haut de la section */
+    padding-top: 0; 
+    margin-top: 0; 
+    text-align: center; 
+    margin: 0 !important; /* Supprime toutes les marges avec une priorité élevée */
+    padding: 0 !important; /* Supprime tous les espacements internes avec une priorité élevée */
+    width: 100vw; 
+    position: relative; /* Permet de positionner les éléments enfants en fonction de cette section */
 }
 
 /* Titre Concerts avec surlignage jaune */
 .concerts-title {
-  font-family: var(--font-primary);
-  font-size: 2.2rem;
+  font-family: var(--font-primary);/* Applique la police principale au titre */
+  font-size: 2.2rem;/* Définit la taille du texte */
   font-weight: bold;
   margin: 1.2em 0 0.5em 0;
   text-align: center; /* Centre uniquement le titre */
